@@ -1,0 +1,159 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cirBlueTop: #00daff;
+  --color-cirBlueTop: #00daff;
+  --color-cirBlueBot: #1d75ff;
+  --color-cirBlueRight: #b134ff;
+
+  --color-linerBlue: #0099ff;
+  --color-light: #ffffff;
+  --color-matn: #191919;
+  --color-perpule-matn: #5e00ff;
+  --color-hero-center: #222222;
+  --color-start-linear: #06ccff;
+  --color-mid-linear: #6164ff;
+  --color-end-linear: #b927ff;
+  --color-win-blue: #00a6ff;
+  --color-win-perpule: #d261ff;
+  --color-canvas-svg-background: #0055ff;
+  --color-start-org: #fd5c1d;
+  --color-text-radial: #c7e9ff;
+  --color-publish-radial: #00ccff;
+  --color-matn-gray: #777777;
+  --color-navbg: #f3f3f3;
+  --color-offmatn: #999999;
+  --color-bot-shadow: #20a6ff;
+  --color-btn-end: #b836ff;
+  --color-center-radial: #c499e6;
+  --color-example-blue: #1300ff;
+  --color-shadow: 9, 172, 255;
+  --shadow-input: 0px 34px 200px rgba(0, 0, 0, 0.3);
+  --shadow-win: 0px 0px 200px rgba(0, 0, 0, 0.1);
+  --shadow-small: 0px 0px 50px rgba(0, 0, 0, 0.05);
+  --shadow-logBtn-sm: 10px 10px 14px -3.8px rgba(var(--color-shadow), 0.18);
+  --shadow-logBtn-md: 3.2px 3.1008px 4.5008px -2.8px rgba(var(--color-shadow), 0.42);
+  --shadow-logBtn-lg: 1.2px 1.2px 1.6992px -1.8992px rgba(var(--color-shadow), 0.49);
+  --shadow-logBtn-xl: 0.4px 0.4px 0.6px -0.4px rgba(var(--color-shadow), 0.52);
+  --shadow-navItem-show: 0px 4px 50px rgba(0, 0, 0, 0.1);
+  --cir-Right-Radial: circle 700px at 90% 90%, var(--color-cirBlueRight), transparent;
+  --cir-Top-Radial: circle 500px at 15% 110%, var(--color-cirBlueTop), transparent;
+  --cir-Bottom-Radial: circle 1050px at 30% 120%, var(--color-cirBlueBot), transparent;
+
+  --win-cir-Right-Radial: circle 500px at 78% 100%, var(--color-win-perpule), transparent;
+  --win-cir-Top-Radial: circle 500px at 30% 100%, var(--color-win-blue), transparent;
+
+  --color-canvas-pink: #9900ff;
+
+  --font-inter: "Inter";
+}
+
+/* @layer utilities {
+  .translate-x-\[-50\%\] {
+    --tw-translate-x: -50%;
+    transform: translateX(var(--tw-translate-x));
+  }
+} */
+
+html::-webkit-scrollbar {
+  display: none;
+}
+html {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+body {
+  font-family: var(--font-inter);
+  font-display: swap;
+}
+
+::selection {
+  @apply text-cirBlueRight bg-cirBlueBot/10;
+}
+button {
+  @apply outline-none cursor-pointer;
+}
+
+.hero_background {
+  @apply bg-[radial-gradient(var(--cir-Top-Radial)),radial-gradient(var(--cir-Right-Radial)),radial-gradient(var(--cir-Bottom-Radial))];
+}
+.hero_background::before {
+  @apply table content-[''] absolute top-0 left-0 w-full bg-linear-to-b from-light to-transparent  h-100 z-10;
+}
+
+.hero_background__footer {
+  @apply opacity-75 hover:opacity-100 hover:scale-[1.2] duration-500;
+}
+
+.navbar__items {
+  @apply relative text-[.9rem] text-matn font-semibold duration-600 px-1 py-0.5;
+}
+.navbar__items:hover {
+  @apply bg-linear-to-r from-start-linear via-mid-linear to-end-linear text-transparent bg-clip-text animate-[reflectAnimation_ease_.600s_forwards];
+}
+
+.navbar__dynamic_items {
+  @apply relative text-[.9rem] text-matn font-semibold duration-600 px-1 py-0.5 cursor-default;
+}
+.navbar__dynamic_items:hover {
+  @apply bg-linear-to-r from-start-linear via-mid-linear to-end-linear text-transparent bg-clip-text;
+}
+.navbar__dynamic_items::before {
+  @apply table absolute content-[''] z-50 w-36 h-0  top-full left-1/2 translate-x-[-50%] bg-[#ffffff3e]  duration-600 rounded-2xl shadow-navItem-show backdrop-blur-md border border-white/50;
+}
+.navbar__dynamic_items:hover::before {
+  @apply h-36;
+}
+
+.navbar__items__icon::after {
+  @apply text-black table content-[''] w-2 h-2 absolute -right-3 top-1/2 translate-y-[-50%] -rotate-[135deg] duration-600 border-2 border-t-white border-r-white bg-white rounded-[2px];
+}
+.navbar__items__icon:hover::after {
+  @apply rotate-[315deg];
+}
+
+.window_section {
+  @apply bg-[radial-gradient(var(--win-cir-Right-Radial)),radial-gradient(var(--win-cir-Top-Radial))];
+}
+
+.canvas__center__headers {
+  @apply text-matn flex-1 text-center text-[5rem] font-normal leading-[5rem] tracking-[-3px];
+}
+.canvas__svg__dire {
+  @apply absolute w-3 h-3 border-[3px]  rounded-full  bg-white;
+}
+.break_point__nav__active_item {
+  @apply !text-matn !bg-white shadow-[0px_10px_10px_rgba(0,0,0,.1)] z-10 duration-300;
+}
+.break_point__nav {
+  @apply text-[15px] font-medium text-offmatn bg-navbg flex justify-center items-center rounded-[12px] cursor-pointer;
+}
+
+.example__item_bg {
+  @apply relative rounded-3xl bg-white/20 shadow-small;
+}
+
+.example__item__first_btn_shadow_after {
+  @apply opacity-30 absolute right-0 top-[.25rem] w-[4.125rem] h-[1.875rem] bg-linear-to-r from-bot-shadow via-mid-linear to-btn-end rounded-lg z-0;
+}
+.secend_after {
+  @apply z-10 bg-transparent backdrop-blur-[2px] rounded-lg absolute right-[-5px] top-[.25rem] w-[5.125rem] h-[2.125rem];
+}
+
+@keyframes reflectAnimation {
+  0% {
+    -webkit-box-reflect: below -6px linear-gradient(transparent, rgba(25, 25, 25, 0.1));
+  }
+  25% {
+    -webkit-box-reflect: below -6px linear-gradient(transparent, rgba(25, 25, 25, 0.25));
+  }
+  50% {
+    -webkit-box-reflect: below -6px linear-gradient(transparent, rgba(25, 25, 25, 0.35));
+  }
+  75% {
+    -webkit-box-reflect: below -6px linear-gradient(transparent, rgba(25, 25, 25, 0.45));
+  }
+  100% {
+    -webkit-box-reflect: below -6px linear-gradient(transparent, rgba(25, 25, 25, 0.6));
+  }
+}
