@@ -1,4 +1,14 @@
 @import "tailwindcss";
+@import "./fonts/inter/inter.css";
+
+
+
+:root {
+  font-family: Inter, sans-serif;
+  font-feature-settings: "liga" 1, "calt" 1; 
+  src: url('./fonts/inter/Inter-Thin.woff2') format('woff2');
+  font-display: swap;
+}
 
 @theme {
   --color-cirBlueTop: #00daff;
@@ -27,7 +37,12 @@
   --color-btn-end: #b836ff;
   --color-center-radial: #c499e6;
   --color-example-blue: #1300ff;
+  --color-effect-purpel: #6600ff;
+  --color-effect-pink: #f700ff;
+  --color-zereshk: #3b0e3a;
+  --color-cir-shadow: 204, 77, 255;
   --color-shadow: 9, 172, 255;
+  --shadow-effect-cir: 0px 20px 60px 0px rgba(var(--color-cir-shadow), 0.3);
   --shadow-input: 0px 34px 200px rgba(0, 0, 0, 0.3);
   --shadow-win: 0px 0px 200px rgba(0, 0, 0, 0.1);
   --shadow-small: 0px 0px 50px rgba(0, 0, 0, 0.05);
@@ -44,8 +59,6 @@
   --win-cir-Top-Radial: circle 500px at 30% 100%, var(--color-win-blue), transparent;
 
   --color-canvas-pink: #9900ff;
-
-  --font-inter: "Inter";
 }
 
 /* @layer utilities {
@@ -62,14 +75,10 @@ html {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
-body {
-  font-family: var(--font-inter);
-  font-display: swap;
-}
 
-::selection {
+/* ::selection {
   @apply text-cirBlueRight bg-cirBlueBot/10;
-}
+} */
 button {
   @apply outline-none cursor-pointer;
 }
