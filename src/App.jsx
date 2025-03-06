@@ -30,9 +30,11 @@ import Play from "./assets/play.svg";
 import Cursor_icon from "./assets/cursor.svg";
 import Slice from "./assets/slice_example.webp";
 import Navigate_image from "./assets/navigate_image.webp";
-import Scroll_animotion from './assets/scroll_animotion.webp'
-import Image_3D_one from './assets/3d_image_one.webp'
-import Image_3D_second from './assets/second_3d_image.webp'
+import Scroll_animotion from "./assets/scroll_animotion.webp";
+import Image_3D_one from "./assets/3d_image_one.webp";
+import Image_3D_second from "./assets/second_3d_image.webp";
+import Cms_image from "./assets/cms_image.webp";
+import Site_manage_image from "./assets/site_manage.webp";
 
 function App() {
   const [NavActive, setNavActive] = useState(0);
@@ -544,18 +546,18 @@ function App() {
                     </div>
                   </div>
                   <div className="flex-1 h-[31.25rem] example__item_bg">
-                    <Icon_arrow color="white" op="0.7" />
-                    <Title_example
-                      title="Figma Plugin"
-                      description="Copy and paste your web designs from Figma to Framer."
-                      color="white"
-                      opacity=".8"
-                      wid="17.3125rem"
-                    />
                     <div className="absolute inset-1 bg-linear-240 from-linerBlue to-example-blue rounded-[1.25rem] overflow-hidden">
+                      <Icon_arrow color="white" op="0.7" />
+                      <Title_example
+                        title="Figma Plugin"
+                        description="Copy and paste your web designs from Figma to Framer."
+                        color="white"
+                        opacity="1"
+                        wid="17.125rem"
+                      />
                       <img
                         loading="lazy"
-                        className="absolute left-[1.5px] top-[10.1875rem]"
+                        className="absolute left-[1.5008px] top-[10.1875rem]"
                         src={Slice}
                         alt="Slice"
                       />
@@ -582,14 +584,31 @@ function App() {
                       <div className="absolute top-[10.625rem] right-[10.625rem] w-2.5 h-2.5 rounded-full  bg-[#DB84FE] shadow-(--shadow-effect-cir)"></div>
                       <div className="absolute left-[5.9375rem] bottom-[3.1875rem] w-2.5 h-2.5 rounded-full  bg-[#CBEBEA] shadow-(--shadow-effect-cir)"></div>
 
-                      <div className="absolute left-[3.375rem] top-[11.875rem] bg-linear-to-r from-white/41 via-white/95 to-white bg-clip-text text-transparent text-[6.75rem] leading-[6.75rem] tracking-[-0.225rem] font-black ">NO CODE</div>
-                      <div className="absolute left-[3.375rem] top-[18.75rem] bg-linear-to-r from-[#E77DFF] via-white/95 to-white bg-clip-text text-transparent text-[6.75rem] leading-[6.75rem] tracking-[-0.225rem] font-black ">EFFECTS</div>
+                      <div className="absolute left-[3.375rem] top-[11.875rem] bg-linear-to-r from-white/41 via-white/95 to-white bg-clip-text text-transparent text-[6.75rem] leading-[6.75rem] tracking-[-0.225rem] font-black ">
+                        NO CODE
+                      </div>
+                      <div className="absolute left-[3.375rem] top-[18.75rem] bg-linear-to-r from-[#E77DFF] via-white/95 to-white bg-clip-text text-transparent text-[6.75rem] leading-[6.75rem] tracking-[-0.225rem] font-black ">
+                        EFFECTS
+                      </div>
 
-
-                      <img loading="lazy" className="absolute top-[11rem] left-[-3.5625rem] w-[10rem] h-[10.3125rem] " src={Image_3D_one} alt="Image_3D_one" />
-                      <img loading="lazy" className="absolute top-[288px] right-[-58px] w-[120px] h-[120px] " src={Image_3D_second} alt="Image_3D_second" />
-                      <img loading="lazy" className="absolute bottom-8 left-[35.1875rem] w-[16.8125rem] h-[13.8125rem]" src={Scroll_animotion} alt="Scroll_animotion" />
-
+                      <img
+                        loading="lazy"
+                        className="absolute top-[11rem] left-[-3.5625rem] w-[10rem] h-[10.3125rem] "
+                        src={Image_3D_one}
+                        alt="Image_3D_one"
+                      />
+                      <img
+                        loading="lazy"
+                        className="absolute top-[288px] right-[-58px] w-[120px] h-[120px] "
+                        src={Image_3D_second}
+                        alt="Image_3D_second"
+                      />
+                      <img
+                        loading="lazy"
+                        className="absolute bottom-8 left-[35.1875rem] w-[16.8125rem] h-[13.8125rem]"
+                        src={Scroll_animotion}
+                        alt="Scroll_animotion"
+                      />
                     </div>
                   </div>
                   <div className="flex-1 h-[31.25rem] example__item_bg">
@@ -621,8 +640,74 @@ function App() {
                   </div>
                 </div>
 
-                <div className="w-full relative flex-1 flex flex-col bg-blue-300"></div>
-                <div className="w-full relative flex-1 flex flex-col bg-blue-800"></div>
+                <div className="w-full relative flex-1 flex justify-between items-center gap-5 ">
+                  <div className="w-[59.411764705882355%] h-[31.25rem] example__item_bg">
+                    <div className="overflow-hidden absolute inset-1 rounded-[20px] ">
+                      <div className="absolute w-full h-[10.625rem] bg-linear-25 from-cms-pink to-effect-purpel backdrop-blur-lg"></div>
+                      <Icon_arrow color="white" op="0.7" />
+                      <Title_example
+                        title="CMS"
+                        description="Run a blog, list job openings, or manage your event schedule."
+                        color="white"
+                        opacity="1"
+                        wid="14.25rem"
+                      />
+                      <div className="bg-white shadow-[0px_10px_40px_0px_rgba(0,0,0,.35)]  flex justify-center items-start absolute top-[10.1875rem] left-1/2 -translate-x-1/2 w-[103%] h-[23.5rem]">
+                        <img className="w-[91.55%]" src={Cms_image} alt="Cms_image" />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex-1 h-[31.25rem] example__item_bg">
+                    <div className="absolute inset-1 -bg-linear-45 from-sabz-kam to-abi-kam rounded-[1.25rem] overflow-hidden">
+                      <Icon_arrow color="white" op="0.7" />
+                      <Title_example
+                        title="SEO"
+                        description="Build lightning-fast, globally optimized sites."
+                        color="white"
+                        opacity="1"
+                        wid="12.1875rem"
+                      />
+                      <div className="w-max h-[13.125rem] absolute top-[12.5625rem] flex gap-10 justify-between items-center left-1/2 -translate-x-1/2   ">
+                        <div className="seo_cir seo_cir_off ">95</div>
+                        <div className="seo_cir ">100</div>
+                        <div className="seo_cir seo_cir_off">98</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="w-full relative flex-1 flex flex-row-reverse justify-between items-center gap-5 ">
+                  <div className="w-[59.411764705882355%] h-[31.25rem]  example__item_bg">
+                    <div className="absolute inset-1  -bg-linear-45 from-end-abi via-[#157AFF]  to-end-banafsh   rounded-[1.25rem] overflow-hidden">
+                      <Icon_arrow color={"white"} op={".7"} />
+                      <Title_example
+                        title={"Site Management"}
+                        wid={"14.25rem"}
+                        color={"white"}
+                        opacity={"1"}
+                        description={"Make sure your site looks great when it is shared."}
+                      />
+
+                      <img
+                        className="rounded-[15px] shadow-[0px_10px_60px_0px_rgba(0,0,0,.15)] max-w-[65.125rem] max-h-[37.625rem] absolute top-[10.4375rem] right-[2.75rem]"
+                        src={Site_manage_image}
+                        alt="Site_manage_image"
+                      />
+                    </div>
+                  </div>
+                  <div className="flex-1 h-[31.25rem] example__item_bg">
+                    <div className="absolute inset-1 bg-linear-45 from-linerBlue to-publish-radial rounded-[1.25rem] overflow-hidden">
+                      <Icon_arrow color="white" op="0.7" />
+                      <Title_example
+                        title="Navigation"
+                        description="Visually structure your pages and link to them easily."
+                        color="white"
+                        opacity=""
+                        wid="15.25rem"
+                      />
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </section>

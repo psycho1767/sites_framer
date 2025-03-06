@@ -1,12 +1,10 @@
 @import "tailwindcss";
 @import "./fonts/inter/inter.css";
 
-
-
 :root {
   font-family: Inter, sans-serif;
-  font-feature-settings: "liga" 1, "calt" 1; 
-  src: url('./fonts/inter/Inter-Thin.woff2') format('woff2');
+  font-feature-settings: "liga" 1, "calt" 1;
+  src: url("./fonts/inter/Inter-Thin.woff2") format("woff2");
   font-display: swap;
 }
 
@@ -39,7 +37,12 @@
   --color-example-blue: #1300ff;
   --color-effect-purpel: #6600ff;
   --color-effect-pink: #f700ff;
+  --color-cms-pink: #c847ff;
   --color-zereshk: #3b0e3a;
+  --color-abi-kam: #00aeff;
+  --color-sabz-kam: #00ff6f;
+  --color-end-abi: #00f6ff;
+  --color-end-banafsh: #2a00ff;
   --color-cir-shadow: 204, 77, 255;
   --color-shadow: 9, 172, 255;
   --shadow-effect-cir: 0px 20px 60px 0px rgba(var(--color-cir-shadow), 0.3);
@@ -147,6 +150,16 @@ button {
 }
 .secend_after {
   @apply z-10 bg-transparent backdrop-blur-[2px] rounded-lg absolute right-[-5px] top-[.25rem] w-[5.125rem] h-[2.125rem];
+}
+
+.seo_cir {
+  @apply min-w-[13.25rem] min-h-[13.25rem] relative bg-linear-to-b from-white/5 to-white/20 text-white text-[3.0625rem] leading-[3.9375rem] tracking-[-0.1875rem]  rounded-full flex justify-center items-center font-bold;
+}
+.seo_cir_off {
+  @apply opacity-30 !min-w-[10.875rem] !min-h-[10.875rem];
+}
+.seo_cir::after {
+  @apply table content-[''] border-[13px] border-white w-[90%] h-[90%] absolute left-1/2 top-1/2 -translate-1/2 rounded-full;
 }
 
 @keyframes reflectAnimation {
