@@ -142,7 +142,7 @@ button {
 }
 
 .example__item_bg {
-  @apply relative rounded-3xl bg-white/20 shadow-small;
+  @apply relative rounded-3xl bg-white/20 shadow-[0px_10px_50px_-3.7px_rgba(0,0,0,.1)];
 }
 
 .example__item__first_btn_shadow_after {

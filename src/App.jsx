@@ -35,6 +35,7 @@ import Image_3D_one from "./assets/3d_image_one.webp";
 import Image_3D_second from "./assets/second_3d_image.webp";
 import Cms_image from "./assets/cms_image.webp";
 import Site_manage_image from "./assets/site_manage.webp";
+import Socal_image from "./assets/socals.webp";
 
 function App() {
   const [NavActive, setNavActive] = useState(0);
@@ -653,7 +654,12 @@ function App() {
                         wid="14.25rem"
                       />
                       <div className="bg-white shadow-[0px_10px_40px_0px_rgba(0,0,0,.35)]  flex justify-center items-start absolute top-[10.1875rem] left-1/2 -translate-x-1/2 w-[103%] h-[23.5rem]">
-                        <img className="w-[91.55%]" src={Cms_image} alt="Cms_image" />
+                        <img
+                          loading="lazy"
+                          className="w-[91.55%]"
+                          src={Cms_image}
+                          alt="Cms_image"
+                        />
                       </div>
                     </div>
                   </div>
@@ -689,6 +695,7 @@ function App() {
                       />
 
                       <img
+                        loading="lazy"
                         className="rounded-[15px] shadow-[0px_10px_60px_0px_rgba(0,0,0,.15)] max-w-[65.125rem] max-h-[37.625rem] absolute top-[10.4375rem] right-[2.75rem]"
                         src={Site_manage_image}
                         alt="Site_manage_image"
@@ -696,14 +703,20 @@ function App() {
                     </div>
                   </div>
                   <div className="flex-1 h-[31.25rem] example__item_bg">
-                    <div className="absolute inset-1 bg-linear-45 from-linerBlue to-publish-radial rounded-[1.25rem] overflow-hidden">
-                      <Icon_arrow color="white" op="0.7" />
+                    <div className="absolute inset-1 bg-linear-45 from-white to-white/45 rounded-[1.25rem] overflow-hidden">
+                      <Icon_arrow color="#999999" op="1" />
                       <Title_example
-                        title="Navigation"
-                        description="Visually structure your pages and link to them easily."
-                        color="white"
+                        title="Plugins"
+                        description="Connect your site to popular apps."
+                        color="black"
                         opacity=""
-                        wid="15.25rem"
+                        wid="8.1875rem"
+                      />
+                      <img
+                        loading="lazy"
+                        className="absolute left-1/2 -translate-x-1/2 top-[10.1875rem] min-w-[39.375rem] h-[21.875rem]"
+                        src={Socal_image}
+                        alt="Socal_image"
                       />
                     </div>
                   </div>
