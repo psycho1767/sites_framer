@@ -150,6 +150,7 @@ function App() {
     <>
       <div className="w-screen">
         <div className="w-full max-w-[100rem] mx-auto my-2.5 min-h-[100dvh] bg-light ">
+
           <section
             id="hero_section"
             className="relative w-full h-[50.125rem] overflow-hidden backdrop-blur-3xl hero_background flex flex-col justify-between items-center">
@@ -722,6 +723,16 @@ function App() {
                   </div>
                 </div>
               </div>
+            </div>
+          </section>
+
+          <section id='community' className="w-full h-[70.875rem] bg-red-400 flex flex-col justify-start items-center">
+            <div className="mt-25 w-full flex-1 flex flex-col gap-18 justify-between items-center bg-blue-400">
+              <div className="w-full h-[15rem] flex flex-col gap-5 justify-start items-start bg-yellow-200">
+                <span className="w-[37.6875rem] text-[3.75rem] text-matn font-bold leading-[3.75rem] tracking-[-2px]">Tons of others love building and shipping sites with Framer.</span>
+                <span className="text-[1.6875rem] text-linerBlue font-bold leading-[2.5rem]">Join the Community</span>
+              </div>
+              <div className="w-full h-[15rem]  flex-1 bg-green-200"></div>
             </div>
           </section>
         </div>
