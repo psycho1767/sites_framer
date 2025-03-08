@@ -1,5 +1,8 @@
+import React from "react";
 import { useState, useEffect } from "react";
 import Header from "./components/Header";
+import parser from "html-react-parser";
+
 import MessageBird from "./assets/MessageBird.svg";
 import Hodinkee from "./assets/hodinkee.svg";
 import Aiaiaiai from "./assets/aiaiaiai.svg";
@@ -14,9 +17,9 @@ import Stars from "./assets/stars.svg";
 import Pattern from "./assets/pattern.svg";
 import ImageWin from "./assets/framer-window.webp";
 import Canvas_svg from "./assets/canvas_svg.svg";
-import Profile from "./assets/profile.png";
+import Profile from "./assets/profile.webp";
 import Sun from "./assets/sun.svg";
-import Secend_profile from "./assets/secend_pofile.png";
+import Secend_profile from "./assets/secend_pofile.webp";
 import Arrow from "./assets/arrow.svg";
 import Star from "./assets/star.svg";
 import Canvas_image from "./assets/canvas_image.webp";
@@ -36,11 +39,22 @@ import Image_3D_second from "./assets/second_3d_image.webp";
 import Cms_image from "./assets/cms_image.webp";
 import Site_manage_image from "./assets/site_manage.webp";
 import Socal_image from "./assets/socals.webp";
+import Profile_1 from "./assets/profile_1.webp";
+import Profile_2 from "./assets/profile_2.webp";
+import Profile_3 from "./assets/profile_3.webp";
+import Profile_4 from "./assets/profile_4.webp";
+import Profile_5 from "./assets/profile_5.webp";
+import Profile_6 from "./assets/profile_6.webp";
+import Profile_7 from "./assets/profile_7.webp";
+import Profile_8 from "./assets/profile_8.webp";
+import Profile_9 from "./assets/profile_9.webp";
+import Profile_10 from "./assets/profile_10.webp";
 
 function App() {
   const [NavActive, setNavActive] = useState(0);
   const [ImageUrl, setImageUrl] = useState("./assets/motion_mobile.webp");
-  const List_text = [
+
+  const [List_text, setListText] = useState([
     {
       text: "Iterate at lightning speed. Quickly build unique landing pages or set up dedicated SEO pages to drive traffic to your website. Use built-in analytics or a 3rd party service to track everything.1",
       link: "#1",
@@ -65,7 +79,7 @@ function App() {
       text: "Iterate at lightning speed. Quickly build unique landing pages or set up dedicated SEO pages to drive traffic to your website. Use built-in analytics or a 3rd party service to track everything.6",
       link: "#6",
     },
-  ];
+  ]);
 
   function Icon_Ai(Tol) {
     return (
@@ -127,6 +141,39 @@ function App() {
     );
   }
 
+  function Comment_cart({ name, id, image, text }) {
+    return (
+      <div className="relative py-8 w-[20.4375rem] min-h-[12.875rem] h-max shadow-md rounded-[15px] border-[.5px] border-black/5 ">
+        <div className=" ml-7 mr-5 flex flex-col gap-6 justify-between  ">
+          <div className="flex gap-3.5 min-h-12 items-center">
+            <img loading="lazy" width={50} height={50} src={image} alt="users profiles" />
+            <div className="flex flex-col  h-full">
+              <span className="text-black font-bold text-[1.125rem] leading-[1.3125rem]">
+                {name}
+              </span>
+              <span className="text-graymatn font-normal">{id}</span>
+            </div>
+          </div>
+          <div className="text-[1.3125rem] leading-[2.1875rem] font-medium">
+            {parser(
+              text
+                .replace("@framer", ' <span style="color:var(--color-linerBlue)">@framer</span> ')
+                .replace("@koenbok", ' <span style="color:var(--color-linerBlue)">@koenbok</span> ')
+                .replace(
+                  "https://t.co/430Wol69Mm",
+                  ' <a href="https://t.co/430Wol69Mm" style="color:var(--color-linerBlue)">https://t.co/430Wol69Mm</a> '
+                )
+                .replace(
+                  "https://event-assure-383023.framer.app",
+                  ' <a href="https://event-assure-383023.framer.app" style="color:var(--color-linerBlue)">https://event-assure-383023.framer.app</a> '
+                )
+            )}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   const updateImageUrl = () => {
     const width = window.innerWidth;
 
@@ -150,7 +197,6 @@ function App() {
     <>
       <div className="w-screen">
         <div className="w-full max-w-[100rem] mx-auto my-2.5 min-h-[100dvh] bg-light ">
-
           <section
             id="hero_section"
             className="relative w-full h-[50.125rem] overflow-hidden backdrop-blur-3xl hero_background flex flex-col justify-between items-center">
@@ -726,15 +772,96 @@ function App() {
             </div>
           </section>
 
-          <section id='community' className="w-full h-[70.875rem] bg-red-400 flex flex-col justify-start items-center">
-            <div className="mt-25 w-full flex-1 flex flex-col gap-18 justify-between items-center bg-blue-400">
-              <div className="w-full h-[15rem] flex flex-col gap-5 justify-start items-start bg-yellow-200">
-                <span className="w-[37.6875rem] text-[3.75rem] text-matn font-bold leading-[3.75rem] tracking-[-2px]">Tons of others love building and shipping sites with Framer.</span>
-                <span className="text-[1.6875rem] text-linerBlue font-bold leading-[2.5rem]">Join the Community</span>
+          <section
+            id="community"
+            className="w-full h-[70.875rem] pb-3.5 flex flex-col justify-start items-center">
+            <div className="mt-25 w-full flex-1 flex flex-col gap-18 justify-between items-center ">
+              <div className="w-full ml-18 h-[15rem] flex flex-col gap-5 justify-start items-start ">
+                <span className="w-[37.6875rem] text-[3.75rem] text-matn font-bold leading-[3.75rem] tracking-[-2px]">
+                  Tons of others love building and shipping sites with Framer.
+                </span>
+                <a href="" className="text-[1.6875rem] text-linerBlue font-bold leading-[2.5rem]">
+                  Join the Community
+                </a>
               </div>
-              <div className="w-full h-[15rem]  flex-1 bg-green-200"></div>
+              <div className="w-full h-[15rem] flex-1 relative overflow-hidden">
+                <div className="absolute left-1/2 -translate-x-1/2 max-w-[110rem] max-h-[52.5625rem] flex gap-x-8 ">
+                  <div className="flex flex-col gap-y-5">
+                    <Comment_cart
+                      name="Mani"
+                      id="@BeingMani97"
+                      image={Profile_1}
+                      text="The scroll variant in @framer hits differently. Never imaged that making some complex things would be easy with that. Everyday i learn something new with Framer."
+                    />
+                    <Comment_cart
+                      name="Fekry Aiad"
+                      id="@FekryAiad"
+                      image={Profile_2}
+                      text="I have been in a @framer rabbit hole for the past 6 hours without even noticing as time goes by — its everything I love in Figma combined with everything I love in "
+                    />
+                  </div>
+                  <div className="flex flex-col gap-y-5">
+                    <Comment_cart
+                      name="./on"
+                      id="@oleg_nykolyn"
+                      image={Profile_3}
+                      text="Yo, @framer is sick AF. Mind-blowing tbh. "
+                    />
+                    <Comment_cart
+                      name="Miguel Ventura"
+                      id="@migdvv"
+                      image={Profile_4}
+                      text="Learned some basics of @framer yesterday, and today I delivered a landing page for a client. It's so unreal how small the learning curve is from Figma to @framer. Absolutely loving it."
+                    />
+                  </div>
+                  <div className="flex flex-col gap-y-5">
+                    <Comment_cart
+                      name="DANN©"
+                      id="@DannPetty"
+                      image={Profile_5}
+                      text="I learned how to build a website in @Framer! My goal was to learn the basic tools in about 20 minutes a day last week. Nothing fancy. No special design. Just randomness elements that's responsive. Check it out: https://event-assure-383023.framer.app If I can do it, so can you!"
+                    />
+                    <Comment_cart
+                      name="Parker"
+                      id="@_prkr"
+                      image={Profile_6}
+                      text="I was enjoying @framer a lot but I am BLOWN AWAY by their Figma plug-in. "
+                    />
+                  </div>
+                  <div className="flex flex-col gap-y-5">
+                    <Comment_cart
+                      name="Daniël van der Winden"
+                      id="@dvdwinden"
+                      image={Profile_7}
+                      text="I've built pretty handy sites powered by Craft or WordPress in the past, but seeing @framer tackle CMS stuff so effortlessly is mind-boggling"
+                    />
+                    <Comment_cart
+                      name="Lauren Waller"
+                      id="@waller_texas"
+                      image={Profile_8}
+                      text="Honestly the @framer publish time is insanely fast. Just published 2 weeks of changes in 5 seconds 🤯 like it’s almost too fast for such a big moment 😂"
+                    />
+                  </div>
+                  <div className="flex flex-col gap-y-5">
+                    <Comment_cart
+                      name="Christopher Lo"
+                      id="@ChristopherLoCC"
+                      image={Profile_9}
+                      text="@koenbok@framer Thank you for building such an empowering tool, especially for designers! The site went from Figma to Framer in less than a week!"
+                    />
+                    <Comment_cart
+                      name="Amos"
+                      id="@amosbastian"
+                      image={Profile_10}
+                      text="Playing around with @framer while building a landing page for a side project. I suck at animations, but they make it so easy 🤩 https://t.co/430Wol69Mm"
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
           </section>
+
+          <section id='lasthope' className="w-full h-[46.5625rem] bg-red-700"></section>
         </div>
       </div>
     </>
