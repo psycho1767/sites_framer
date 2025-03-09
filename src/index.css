@@ -47,7 +47,7 @@
   --color-cir-shadow: 204, 77, 255;
   --color-shadow: 9, 172, 255;
   --shadow-effect-cir: 0px 20px 60px 0px rgba(var(--color-cir-shadow), 0.3);
-  --shadow-input: 0px 34px 200px rgba(0, 0, 0, 0.3);
+  --shadow-input: 0px 34px 100px rgba(0, 0, 0, 0.2);
   --shadow-win: 0px 0px 200px rgba(0, 0, 0, 0.1);
   --shadow-small: 0px 0px 50px rgba(0, 0, 0, 0.05);
   --shadow-logBtn-sm: 10px 10px 14px -3.8px rgba(var(--color-shadow), 0.18);
@@ -162,6 +162,14 @@ button {
 .seo_cir::after {
   @apply table content-[''] border-[13px] border-white w-[90%] h-[90%] absolute left-1/2 top-1/2 -translate-1/2 rounded-full;
 }
+
+.lasthope_after::after{
+  @apply table content-[''] w-full h-[32.5625rem] absolute bottom-0 bg-linear-to-t from-black  to-transparent
+}
+.tags_ab{
+  @apply relative w-3 h-2 
+}
+
 
 @keyframes reflectAnimation {
   0% {

@@ -186,6 +186,76 @@ function App() {
     }
   };
 
+  function AI_input() {
+    return (
+      <div className="relative w-[50rem] h-[6.875rem] bg-transparent rounded-[36px] shadow-input">
+        <div className=" absolute inset-2.5 bg-linear-to-b from-light/80 to-light rounded-3xl flex justify-center items-center ">
+          <div className="flex justify-between items-center m-5 w-full gap-8">
+            <div className="flex justify-start items-center gap-3 flex-1 h-full ">
+              {Icon_Ai(48)}
+              <input
+                className="w-full h-10 text-matn/70 border-none outline-none"
+                type="text"
+                placeholder="An iOS to-do app startup called Magic"
+              />
+            </div>
+            <button className="relative overflow-hidden shadow-md  group w-[11.0625rem]  h-14 flex justify-center items-center text-light text-[1.25rem] font-semibold rounded-[14px] cursor-pointer bg-linear-to-r from-linerBlue via-mid-linear to-end-linear duration-500 hover:scale-[1.1]">
+              <img
+                loading="lazy"
+                className="absolute group-hover:scale-[3.5] group-hover:rotate-[185deg] duration-500 scale-0 z-50"
+                src={Pattern}
+                alt="patter"
+              />
+              <img loading="lazy" src={Stars} alt="Stars" />
+              Start with AI
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  function Tags({ text }) {
+    return (
+      <div className="flex justify-start items-center gap-1.5">
+        <svg
+          width="17"
+          height="12"
+          viewBox="0 0 17 12"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M14.7461 1.625L5.99609 10.375L1.62109 6"
+            stroke="white"
+            stroke-opacity="0.7"
+            stroke-width="3"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+
+        <span className="text-[1.25rem] font-semibold text-white/70">{text}</span>
+      </div>
+    );
+  }
+
+  function Footer_navs({ title, data }) {
+    return (
+      <div className="w-[18.75rem] h-max flex flex-col gap-3.5">
+        <h1 className="text-white text-lg font-bold leading-5">{title}</h1>
+        <div className="flex flex-col gap-3.5 w-full">
+          {data.map((item) => {
+            return (
+              <a className="text-offmatn text-[1.0625rem] font-medium leading-6" href={item.link}>
+                {item.name}
+              </a>
+            );
+          })}
+        </div>
+      </div>
+    );
+  }
+
   useEffect(() => {
     updateImageUrl();
     window.addEventListener("resize", updateImageUrl);
@@ -196,7 +266,7 @@ function App() {
   return (
     <>
       <div className="w-screen">
-        <div className="w-full max-w-[100rem] mx-auto my-2.5 min-h-[100dvh] bg-light ">
+        <div className="w-full max-w-[100rem] mx-auto mt-2.5 min-h-[100dvh] bg-light ">
           <section
             id="hero_section"
             className="relative w-full h-[50.125rem] overflow-hidden backdrop-blur-3xl hero_background flex flex-col justify-between items-center">
@@ -210,7 +280,7 @@ function App() {
               <div className=" mx-16 text-center text-[4.125rem] font-bold text-hero-center tracking-[-2.5008px] leading-16 cursor-default">
                 Start your dream site with AI. Zero code, maximum speed.
               </div>
-              <div className="relative w-[50rem] h-[6.875rem] bg-transparent rounded-[36px] shadow-input">
+              {/* <div className="relative w-[50rem] h-[6.875rem] bg-transparent rounded-[36px] shadow-input">
                 <div className=" absolute inset-2.5 bg-linear-to-b from-light/80 to-light rounded-3xl flex justify-center items-center ">
                   <div className="flex justify-between items-center m-5 w-full gap-8">
                     <div className="flex justify-start items-center gap-3 flex-1 h-full ">
@@ -233,7 +303,8 @@ function App() {
                     </button>
                   </div>
                 </div>
-              </div>
+              </div> */}
+              <AI_input />
             </div>
             <div className="w-full h-[5.0625rem] flex flex-col justify-center items-center gap-3 mb-2">
               <div className=" w-full flex justify-center items-center text-[.9375rem] text-light/70 font-medium">
@@ -780,7 +851,9 @@ function App() {
                 <span className="w-[37.6875rem] text-[3.75rem] text-matn font-bold leading-[3.75rem] tracking-[-2px]">
                   Tons of others love building and shipping sites with Framer.
                 </span>
-                <a href="" className="text-[1.6875rem] text-linerBlue font-bold leading-[2.5rem]">
+                <a
+                  href={import.meta.env.VITE_BASE_URL}
+                  className="text-[1.6875rem] text-linerBlue font-bold leading-[2.5rem]">
                   Join the Community
                 </a>
               </div>
@@ -861,7 +934,43 @@ function App() {
             </div>
           </section>
 
-          <section id='lasthope' className="w-full h-[46.5625rem] bg-red-700"></section>
+          <section
+            id="lasthope"
+            className="lasthope_after relative  w-full h-[46.5625rem] bg-[linear-gradient(to_right,#0099FF_0%,#3370FF_25%,#6945FF_50%,#991EFF_78%,#BF00FF_100%)] backdrop-blur-lg">
+            <div className="z-10 overflow-hidden flex flex-col gap-[2.1875rem] justify-start items-center absolute w-[62.5rem] h-[28.75rem] left-1/2 top-[8.4375rem] -translate-x-1/2 ">
+              <h1 className="w-[50.625rem] bg-radial from-[#FAB8FF]/100 via-[#feefff] to-white bg-clip-text text-transparent text-center text-[6.25rem] font-bold leading-[6.25rem] tracking-[-3px]">
+                Start your dream site with AI.
+              </h1>
+              <AI_input />
+              <div className="w-[71.25rem] h-6 mt-3.5 flex  gap-11">
+                <Tags text="Active community" />
+                <Tags text="100 Free CMS Items" />
+                <Tags text="Publish for free" />
+                <Tags text="Unlimited Projects" />
+                <Tags text="Mac & Windows" />
+              </div>
+            </div>
+          </section>
+
+          <footer className="w-full h-[57.875rem] relative flex flex-col bg-black">
+            <div className="w-[76.38888888888889%] mx-auto flex-1 flex flex-col ">
+              <div className="w-[90.9090909090909%] flex-1 mx-[3.125rem] mt-[3.125rem] ">
+                <Footer_navs
+                  title="Company"
+                  data={[
+                    { name: "About", link: "#" },
+                    { name: "Careers", link: "#" },
+                    { name: "Cookies", link: "#" },
+                    { name: "Security", link: "#" },
+                    { name: "Privacy", link: "#" },
+                    { name: "Abuse", link: "#" },
+                    { name: "Charges", link: "#" },
+                    { name: "Terms", link: "#" },
+                  ]}
+                />
+              </div>
+            </div>
+          </footer>
         </div>
       </div>
     </>
