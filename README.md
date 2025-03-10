@@ -1,1 +1,1 @@
-# just empty front for fun no responsive for mobile device
+# just empty front just for fun no not responsive mobile 
