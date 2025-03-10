@@ -234,14 +234,14 @@ function App() {
           />
         </svg>
 
-        <span className="text-[1.25rem] font-semibold text-white/70">{text}</span>
+        <span className="cursor-default text-[1.25rem] font-semibold text-white/70">{text}</span>
       </div>
     );
   }
 
   function Footer_navs({ title, data }) {
     return (
-      <div className="w-[18.75rem] h-max flex flex-col gap-3.5">
+      <div className="cursor-default w-[18.75rem] h-max flex flex-col gap-3.5">
         <h1 className="text-white text-lg font-bold leading-5">{title}</h1>
         <div className="flex flex-col gap-3.5 w-full">
           {data.map((item) => {
@@ -266,7 +266,7 @@ function App() {
   return (
     <>
       <div className="w-screen">
-        <div className="w-full max-w-[100rem] mx-auto mt-2.5 min-h-[100dvh] bg-light ">
+        <div className="w-full max-w-[100rem] mx-auto mt-2.5 min-h-[100dvh] bg-light cursor-default ">
           <section
             id="hero_section"
             className="relative w-full h-[50.125rem] overflow-hidden backdrop-blur-3xl hero_background flex flex-col justify-between items-center">
@@ -938,7 +938,7 @@ function App() {
             id="lasthope"
             className="lasthope_after relative  w-full h-[46.5625rem] bg-[linear-gradient(to_right,#0099FF_0%,#3370FF_25%,#6945FF_50%,#991EFF_78%,#BF00FF_100%)] backdrop-blur-lg">
             <div className="z-10 overflow-hidden flex flex-col gap-[2.1875rem] justify-start items-center absolute w-[62.5rem] h-[28.75rem] left-1/2 top-[8.4375rem] -translate-x-1/2 ">
-              <h1 className="w-[50.625rem] bg-radial from-[#FAB8FF]/100 via-[#feefff] to-white bg-clip-text text-transparent text-center text-[6.25rem] font-bold leading-[6.25rem] tracking-[-3px]">
+              <h1 className="cursor-default w-[50.625rem] bg-radial from-[#FAB8FF]/100 via-[#feefff] to-white bg-clip-text text-transparent text-center text-[6.25rem] font-bold leading-[6.25rem] tracking-[-3px]">
                 Start your dream site with AI.
               </h1>
               <AI_input />
@@ -954,20 +954,149 @@ function App() {
 
           <footer className="w-full h-[57.875rem] relative flex flex-col bg-black">
             <div className="w-[76.38888888888889%] mx-auto flex-1 flex flex-col ">
-              <div className="w-[90.9090909090909%] flex-1 mx-[3.125rem] mt-[3.125rem] ">
-                <Footer_navs
-                  title="Company"
-                  data={[
-                    { name: "About", link: "#" },
-                    { name: "Careers", link: "#" },
-                    { name: "Cookies", link: "#" },
-                    { name: "Security", link: "#" },
-                    { name: "Privacy", link: "#" },
-                    { name: "Abuse", link: "#" },
-                    { name: "Charges", link: "#" },
-                    { name: "Terms", link: "#" },
-                  ]}
-                />
+              <div className="w-[90.9090909090909%] flex-1 flex gap-12 mx-[3.125rem] mt-[3.125rem] ">
+                <div className="flex flex-col max-w-[18.75rem] gap-[47px]">
+                  <Footer_navs
+                    title="Company"
+                    data={[
+                      { name: "About", link: "#" },
+                      { name: "Careers", link: "#" },
+                      { name: "Cookies", link: "#" },
+                      { name: "Security", link: "#" },
+                      { name: "Privacy", link: "#" },
+                      { name: "Abuse", link: "#" },
+                      { name: "Charges", link: "#" },
+                      { name: "Terms", link: "#" },
+                    ]}
+                  />
+                  <Footer_navs
+                    title="Product"
+                    data={[
+                      { name: "Learn", link: "#" },
+                      { name: "Plugins", link: "#" },
+                      { name: "Awards", link: "#" },
+                      { name: "Agencies", link: "#" },
+                      { name: "Startups", link: "#" },
+                      { name: "Freelancers", link: "#" },
+                      { name: "Business", link: "#" },
+                      { name: "Pricing", link: "#" },
+                    ]}
+                  />
+                </div>
+                <div className="flex flex-col max-w-[18.75rem] gap-[47px]">
+                  <Footer_navs
+                    title="Templates"
+                    data={[
+                      { name: "Free", link: "#" },
+                      { name: "Artificial intelligence", link: "#" },
+                      { name: "Agency", link: "#" },
+                      { name: "Blog", link: "#" },
+                      { name: "Brand Guidelines", link: "#" },
+                      { name: "Business", link: "#" },
+                      { name: "Changelog", link: "#" },
+                      { name: "Ecommerce", link: "#" },
+                      { name: "Entertainment", link: "#" },
+                      { name: "Health", link: "#" },
+                      { name: "Landing Page", link: "#" },
+                      { name: "Mini", link: "#" },
+                      { name: "Personal", link: "#" },
+                      { name: "Photography", link: "#" },
+                      { name: "Podcast", link: "#" },
+                      { name: "Portfolio", link: "#" },
+                      { name: "Splash", link: "#" },
+                      { name: "Sidebar", link: "#" },
+                      { name: "Startup", link: "#" },
+                      { name: "Web3", link: "#" },
+                      { name: "3D", link: "#" },
+                    ]}
+                  />
+                </div>
+                <div className="flex flex-col max-w-[18.75rem] gap-[47px]">
+                  <Footer_navs
+                    title="Resources"
+                    data={[
+                      { name: "Desktop Apps", link: "#" },
+                      { name: "Partners", link: "#" },
+                      { name: "Experts", link: "#" },
+                      { name: "Figma Plugin", link: "#" },
+                      { name: "Webflow vs. Framer", link: "#" },
+                    ]}
+                  />
+                  <Footer_navs
+                    title="Support"
+                    data={[
+                      { name: "Updates", link: "#" },
+                      { name: "Hype Feed", link: "#" },
+                      { name: "Community", link: "#" },
+                      { name: "Contact", link: "#" },
+                    ]}
+                  />
+                  <div className="w-full h-[3.375rem] flex flex-col gap-3.5">
+                    <div className="flex gap-3.5">
+                      <a className="hover:scale-[1.3] duration-300" href="#">
+                        <svg
+                          width="25"
+                          height="26"
+                          viewBox="0 0 25 26"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <path
+                            d="M21.5 6.18568C20.76 6.71268 19.941 7.11568 19.074 7.37968C18.12 6.27268 16.584 5.88468 15.227 6.40768C13.87 6.93068 12.981 8.25368 13 9.71968V10.5007C10.242 10.5727 7.631 9.24568 6.045 6.96568C6.045 6.96568 2.955 13.9877 9.909 17.1087C8.318 18.1997 6.422 18.7467 4.5 18.6687C11.455 22.5697 19.955 18.6687 19.955 9.69668C19.954 9.47968 19.933 9.26268 19.893 9.04868C20.681 8.26368 21.238 7.27268 21.5 6.18568Z"
+                            fill="white"
+                          />
+                        </svg>
+                      </a>
+                      <a className="hover:scale-[1.3] duration-300" href="#">
+                        <svg
+                          width="25"
+                          height="26"
+                          viewBox="0 0 25 26"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <path
+                            d="M24 13.5303C24 13.5303 24 17.0173 23.54 18.6883C23.285 19.6123 22.544 20.3343 21.595 20.5823C19.88 21.0303 13 21.0303 13 21.0303C13 21.0303 6.12 21.0303 4.405 20.5823C3.456 20.3333 2.715 19.6123 2.46 18.6883C2 17.0173 2 13.5303 2 13.5303C2 13.5303 2 10.0433 2.46 8.37227C2.715 7.44827 3.456 6.72727 4.405 6.47827C6.12 6.03027 13 6.03027 13 6.03027C13 6.03027 19.88 6.03027 21.595 6.47827C22.544 6.72727 23.285 7.44827 23.54 8.37227C23.998 10.0433 24 13.5303 24 13.5303ZM10.798 16.7443L16.514 13.5303L10.798 10.3173V16.7443Z"
+                            fill="white"
+                          />
+                        </svg>
+                      </a>
+                      <a className="hover:scale-[1.3] duration-300" href="#">
+                        <svg
+                          width="25"
+                          height="26"
+                          viewBox="0 0 25 26"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <path
+                            d="M5 10.1973C5 7.61927 7.089 5.53027 9.667 5.53027H16.333C18.911 5.53027 21 7.61927 21 10.1973V16.8633C21 19.4413 18.911 21.5303 16.333 21.5303H9.667C7.089 21.5303 5 19.4413 5 16.8633V10.1973ZM16.333 8.86327C16.322 9.34727 16.574 9.79827 16.991 10.0433C17.408 10.2883 17.924 10.2883 18.341 10.0433C18.758 9.79927 19.01 9.34727 18.999 8.86427C18.983 8.13927 18.391 7.56027 17.667 7.56027C16.942 7.56027 16.35 8.13927 16.333 8.86327ZM9.667 13.5303C9.667 15.3713 11.16 16.8643 13.001 16.8633C14.842 16.8633 16.334 15.3703 16.334 13.5293C16.334 11.6883 14.841 10.1963 13 10.1963C11.159 10.1963 9.666 11.6893 9.667 13.5303Z"
+                            fill="white"
+                          />
+                        </svg>
+                      </a>
+                      <a className="hover:scale-[1.3] duration-300" href="#">
+                        <svg
+                          width="24"
+                          height="25"
+                          viewBox="0 0 24 25"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <path
+                            d="M12.001 4.53027C7.582 4.53027 4 8.11227 4 12.5293C4 15.8063 5.97 18.6203 8.789 19.8573C8.765 19.2983 8.784 18.6283 8.927 18.0213C9.082 17.3713 9.957 13.6613 9.957 13.6613C9.957 13.6613 9.702 13.1503 9.702 12.3953C9.702 11.2093 10.389 10.3243 11.244 10.3243C11.973 10.3243 12.323 10.8713 12.323 11.5253C12.323 12.2563 11.857 13.3513 11.618 14.3643C11.417 15.2133 12.043 15.9053 12.879 15.9053C14.396 15.9053 15.417 13.9583 15.417 11.6523C15.417 9.89927 14.236 8.58627 12.088 8.58627C9.661 8.58627 8.15 10.3963 8.15 12.4173C8.15 13.1143 8.354 13.6063 8.677 13.9863C8.824 14.1613 8.845 14.2323 8.791 14.4323C8.753 14.5793 8.665 14.9343 8.628 15.0743C8.575 15.2773 8.411 15.3493 8.228 15.2753C7.11 14.8183 6.59 13.5953 6.59 12.2183C6.59 9.94627 8.507 7.22127 12.307 7.22127C15.362 7.22127 17.373 9.43127 17.373 11.8033C17.373 14.9423 15.627 17.2873 13.055 17.2873C12.191 17.2873 11.379 16.8193 11.101 16.2893C11.101 16.2893 10.636 18.1333 10.538 18.4883C10.368 19.1043 10.036 19.7223 9.733 20.2023C10.469 20.4203 11.233 20.5303 12.001 20.5303C16.419 20.5303 20 16.9483 20 12.5293C20 8.11227 16.419 4.53027 12.001 4.53027Z"
+                            fill="white"
+                          />
+                        </svg>
+                      </a>
+                      <a className="hover:scale-[1.3] duration-300" href="#">
+                      <svg width="25" height="26" viewBox="0 0 25 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12.5273 21.0547C8.11534 21.0547 4.52734 17.4697 4.52734 13.0577C4.52734 8.64069 8.11534 5.05469 12.5273 5.05469C16.9403 5.05469 20.5273 8.64069 20.5273 13.0517C20.5273 17.4637 16.9403 21.0547 12.5273 21.0547ZM19.2713 14.1467C19.0403 14.0717 17.1593 13.5147 15.0153 13.8527C15.9093 16.3057 16.2713 18.3077 16.3403 18.7207C17.8773 17.6887 18.9713 16.0487 19.2713 14.1467ZM15.1963 19.3527C15.0963 18.7527 14.6963 16.6627 13.7403 14.1717C13.7273 14.1787 13.7093 14.1847 13.6963 14.1847C9.84034 15.5297 8.45934 18.2017 8.33434 18.4517C9.49034 19.3527 10.9463 19.8907 12.5273 19.8907C13.4713 19.8977 14.3773 19.7037 15.1963 19.3527ZM7.45234 17.6327C7.60934 17.3697 9.48434 14.2657 13.0093 13.1207C13.0963 13.0897 13.1903 13.0647 13.2773 13.0397C13.1093 12.6517 12.9213 12.2637 12.7213 11.8817C9.30934 12.9017 5.99634 12.8577 5.69634 12.8517C5.69634 12.9207 5.69034 12.9897 5.69034 13.0577C5.69634 14.8167 6.35934 16.4187 7.45234 17.6327ZM5.84034 11.6627C6.14634 11.6687 8.95934 11.6817 12.1593 10.8307C11.0273 8.81569 9.80234 7.12669 9.62734 6.88169C7.70934 7.78369 6.28434 9.54769 5.84034 11.6627ZM10.9273 6.41869C11.1153 6.66969 12.3593 8.35869 13.4773 10.4177C15.9093 9.50369 16.9343 8.12769 17.0593 7.95169C15.8523 6.88169 14.2653 6.23169 12.5273 6.23169C11.9773 6.23169 11.4403 6.30069 10.9273 6.41869ZM17.8153 8.74069C17.6713 8.93469 16.5273 10.4047 14.0023 11.4377C14.1593 11.7627 14.3153 12.0947 14.4593 12.4257C14.5093 12.5447 14.5593 12.6637 14.6093 12.7767C16.8843 12.4887 19.1403 12.9517 19.3653 12.9957C19.3463 11.3877 18.7713 9.90469 17.8153 8.74069Z" fill="white"/>
+</svg>
+
+                      </a>
+                    </div>
+                    <span className="cursor-default text-[.6875rem] text-white  opacity-40">
+                      Framer made by psycho © 2025
+                    </span>
+                  </div>
+                </div>
               </div>
             </div>
           </footer>
